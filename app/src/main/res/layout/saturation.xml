@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/saturationSeekBarLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_marginHorizontal="@dimen/md"
+    android:visibility="gone">
+    <TextView
+        android:id="@+id/saturationSeekBarTitleView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adjust saturation"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/md"/>
+    <TextView
+        android:id="@+id/saturationSeekBarOkView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:drawableStartCompat="@drawable/ic_check"
+        android:paddingHorizontal="@dimen/sm"/>
+    <SeekBar
+        android:id="@+id/saturationSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progressTint="@color/secondary_color_variant"
+        android:thumb="@drawable/seek_thumb"
+        style="@style/customSeekBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/saturationSeekBarTitleView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:max="200"
+        android:progress="255"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

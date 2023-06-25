@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/secondary_color_variant"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:paddingHorizontal="@dimen/md"
+            android:text="Photo Editor"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/saveImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/sm"
+            android:padding="@dimen/sm"
+            app:drawableEndCompat="@drawable/ic_check"
+            app:drawableTint="@color/secondary_color_variant" />
+
+        <TextView
+            android:id="@+id/addBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/sm"
+            android:padding="@dimen/sm"
+            app:drawableEndCompat="@drawable/ic_add_photo"
+            app:drawableTint="@color/secondary_color_variant" />
+
+        <TextView
+            android:id="@+id/camBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/sm"
+            android:padding="@dimen/sm"
+            app:drawableEndCompat="@drawable/ic_camera_24"
+            app:drawableTint="@color/secondary_color_variant" />
+
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <LinearLayout
+        android:id="@+id/welcomescreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backimage"
+        android:orientation="vertical">
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/editScreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/editToolsWrapper"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <HorizontalScrollView
+                android:id="@+id/toolsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/sm"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/brightnessBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Brightness"
+                        app:drawableTint="@color/secondary_color_variant"
+                        app:drawableBottomCompat="@drawable/ic_brightness"
+                        android:layout_marginHorizontal="@dimen/md" />
+                    <TextView
+                        android:id="@+id/contrastBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contrast"
+                        app:drawableTint="@color/secondary_color_variant"
+                        app:drawableBottomCompat="@drawable/contrast1"
+                        android:layout_marginHorizontal="@dimen/md" />
+                    <TextView
+                        android:id="@+id/saturationBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Saturation"
+                        app:drawableTint="@color/secondary_color_variant"
+                        app:drawableBottomCompat="@drawable/ic_contrast"
+                        android:layout_marginHorizontal="@dimen/md"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <include layout="@layout/brightness"/>
+
+            <include layout="@layout/contrast"/>
+
+            <include layout="@layout/saturation"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp">
+            <TextView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:layout_weight="1"
+                app:drawableTint="@color/secondary_color_variant"
+                android:layout_marginHorizontal="@dimen/md"
+                app:drawableBottomCompat="@drawable/ic_arrow_back_24"/>
+
+            <TextView
+                android:id="@+id/rotate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rotate"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="@dimen/md"
+                app:drawableTint="@color/secondary_color_variant"
+                app:drawableBottomCompat="@drawable/ic_rotate_right_24"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
